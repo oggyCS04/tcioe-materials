@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Footer Variants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-showcase {
+            margin-bottom: 50px;
+        }
+        
+        .footer-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        /* Common Footer Styles */
+        .footer-base {
+            padding: 50px 0;
+            border-top: 1px solid;
+            position: relative;
+        }
+        
+        .footer-base::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+        }
+        
+        .footer-section a {
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .footer-section a:hover {
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid;
+            font-size: 14px;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* Variant 1: Orange Primary (#F97A00) */
+        .footer-variant-1 {
+            background: #fff;
+            color: #333;
+            border-top-color: #f0f0f0;
+        }
+        
+        .footer-variant-1::before {
+            background: linear-gradient(90deg, #F97A00, #ff9500);
+        }
+        
+        .footer-variant-1 .footer-section h3 {
+            color: #333;
+        }
+        
+        .footer-variant-1 .footer-section h3::after {
+            background: #F97A00;
+        }
+        
+        .footer-variant-1 .footer-section a {
+            color: #666;
+        }
+        
+        .footer-variant-1 .footer-section a:hover {
+            color: #F97A00;
+        }
+        
+        .footer-variant-1 .logo {
+            background: linear-gradient(45deg, #F97A00, #ff9500);
+        }
+        
+        .footer-variant-1 .social-links a {
+            background: #F97A00;
+        }
+        
+        .footer-variant-1 .social-links a:hover {
+            box-shadow: 0 5px 15px rgba(249, 122, 0, 0.4);
+        }
+        
+        .footer-variant-1 .footer-bottom {
+            color: #666;
+            border-top-color: #f0f0f0;
+        }
+        
+        /* Variant 2: Navy Blue Primary (#012549) */
+        .footer-variant-2 {
+            background: #012549;
+            color: #fff;
+            border-top-color: #1a3a5c;
+        }
+        
+        .footer-variant-2::before {
+            background: linear-gradient(90deg, #F97A00, #ff9500);
+        }
+        
+        .footer-variant-2 .footer-section h3 {
+            color: #fff;
+        }
+        
+        .footer-variant-2 .footer-section h3::after {
+            background: #F97A00;
+        }
+        
+        .footer-variant-2 .footer-section a {
+            color: #b8c6d9;
+        }
+        
+        .footer-variant-2 .footer-section a:hover {
+            color: #F97A00;
+        }
+        
+        .footer-variant-2 .logo {
+            background: linear-gradient(45deg, #F97A00, #ff9500);
+        }
+        
+        .footer-variant-2 .social-links a {
+            background: #F97A00;
+        }
+        
+        .footer-variant-2 .social-links a:hover {
+            box-shadow: 0 5px 15px rgba(249, 122, 0, 0.4);
+        }
+        
+        .footer-variant-2 .footer-bottom {
+            color: #b8c6d9;
+            border-top-color: #1a3a5c;
+        }
+        
+        /* Variant 3: Emerald Green & Teal */
+        .footer-variant-3 {
+            background: #f8fffe;
+            color: #2d3748;
+            border-top-color: #e2e8f0;
+        }
+        
+        .footer-variant-3::before {
+            background: linear-gradient(90deg, #10b981, #14b8a6);
+        }
+        
+        .footer-variant-3 .footer-section h3 {
+            color: #1a202c;
+        }
+        
+        .footer-variant-3 .footer-section h3::after {
+            background: #10b981;
+        }
+        
+        .footer-variant-3 .footer-section a {
+            color: #4a5568;
+        }
+        
+        .footer-variant-3 .footer-section a:hover {
+            color: #10b981;
+        }
+        
+        .footer-variant-3 .logo {
+            background: linear-gradient(45deg, #10b981, #14b8a6);
+        }
+        
+        .footer-variant-3 .social-links a {
+            background: #10b981;
+        }
+        
+        .footer-variant-3 .social-links a:hover {
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .footer-variant-3 .footer-bottom {
+            color: #4a5568;
+            border-top-color: #e2e8f0;
+        }
+        
+        /* Variant 4: Purple & Violet */
+        .footer-variant-4 {
+            background: #1a1a2e;
+            color: #e2e8f0;
+            border-top-color: #2d3748;
+        }
+        
+        .footer-variant-4::before {
+            background: linear-gradient(90deg, #8b5cf6, #a855f7);
+        }
+        
+        .footer-variant-4 .footer-section h3 {
+            color: #f7fafc;
+        }
+        
+        .footer-variant-4 .footer-section h3::after {
+            background: #8b5cf6;
+        }
+        
+        .footer-variant-4 .footer-section a {
+            color: #cbd5e0;
+        }
+        
+        .footer-variant-4 .footer-section a:hover {
+            color: #8b5cf6;
+        }
+        
+        .footer-variant-4 .logo {
+            background: linear-gradient(45deg, #8b5cf6, #a855f7);
+        }
+        
+        .footer-variant-4 .social-links a {
+            background: #8b5cf6;
+        }
+        
+        .footer-variant-4 .social-links a:hover {
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        .footer-variant-4 .footer-bottom {
+            color: #cbd5e0;
+            border-top-color: #2d3748;
+        }
+        
+        /* Variant 5: Rose Gold & Coral */
+        .footer-variant-5 {
+            background: #fef7f0;
+            color: #3c1f1a;
+            border-top-color: #f3e8d0;
+        }
+        
+        .footer-variant-5::before {
+            background: linear-gradient(90deg, #ec4899, #f97316);
+        }
+        
+        .footer-variant-5 .footer-section h3 {
+            color: #7c2d12;
+        }
+        
+        .footer-variant-5 .footer-section h3::after {
+            background: #ec4899;
+        }
+        
+        .footer-variant-5 .footer-section a {
+            color: #a16c4a;
+        }
+        
+        .footer-variant-5 .footer-section a:hover {
+            color: #ec4899;
+        }
+        
+        .footer-variant-5 .logo {
+            background: linear-gradient(45deg, #ec4899, #f97316);
+        }
+        
+        .footer-variant-5 .social-links a {
+            background: #ec4899;
+        }
+        
+        .footer-variant-5 .social-links a:hover {
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+        }
+        
+        .footer-variant-5 .footer-bottom {
+            color: #a16c4a;
+            border-top-color: #f3e8d0;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Variant 1: Orange Primary -->
+        <div class="footer-showcase">
+            <div class="footer-title">Variant 1: Orange Primary (#F97A00)</div>
+            <footer class="footer-base footer-variant-1">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="logo">IOE</div>
+                            <h3>Institution</h3>
+                            <p>Tribhuvan University<br>Institute of Engineering<br>Thapathali Campus</p>
+                            <div class="social-links">
+                                <a href="#">f</a>
+                                <a href="#">@</a>
+                                <a href="#">in</a>
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Access</h3>
+                            <a href="#">About</a>
+                            <a href="#">Academic Calendar</a>
+                            <a href="#">Downloads</a>
+                            <a href="#">Campus Map</a>
+                            <a href="#">Directory</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Departments</h3>
+                            <a href="#">Applied Science</a>
+                            <a href="#">Architecture</a>
+                            <a href="#">Civil Engineering</a>
+                            <a href="#">Electronics & Computer Engineering</a>
+                            <a href="#">Industrial Engineering</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Resources</h3>
+                            <a href="#">Examination Control Board</a>
+                            <a href="#">Annual Reports</a>
+                            <a href="#">Act & Rules</a>
+                            <a href="#">Code of Conducts</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 IOE Thapathali Campus - All rights reserved | Accessibility | Terms of use | Sitemap</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Variant 2: Navy Blue Primary -->
+        <div class="footer-showcase">
+            <div class="footer-title">Variant 2: Navy Blue Primary (#012549)</div>
+            <footer class="footer-base footer-variant-2">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="logo">IOE</div>
+                            <h3>Institution</h3>
+                            <p>Tribhuvan University<br>Institute of Engineering<br>Thapathali Campus</p>
+                            <div class="social-links">
+                                <a href="#">f</a>
+                                <a href="#">@</a>
+                                <a href="#">in</a>
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Access</h3>
+                            <a href="#">About</a>
+                            <a href="#">Academic Calendar</a>
+                            <a href="#">Downloads</a>
+                            <a href="#">Campus Map</a>
+                            <a href="#">Directory</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Departments</h3>
+                            <a href="#">Applied Science</a>
+                            <a href="#">Architecture</a>
+                            <a href="#">Civil Engineering</a>
+                            <a href="#">Electronics & Computer Engineering</a>
+                            <a href="#">Industrial Engineering</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Resources</h3>
+                            <a href="#">Examination Control Board</a>
+                            <a href="#">Annual Reports</a>
+                            <a href="#">Act & Rules</a>
+                            <a href="#">Code of Conducts</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 IOE Thapathali Campus - All rights reserved | Accessibility | Terms of use | Sitemap</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Variant 3: Emerald Green & Teal -->
+        <div class="footer-showcase">
+            <div class="footer-title">Variant 3: Emerald Green & Teal</div>
+            <footer class="footer-base footer-variant-3">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="logo">IOE</div>
+                            <h3>Institution</h3>
+                            <p>Tribhuvan University<br>Institute of Engineering<br>Thapathali Campus</p>
+                            <div class="social-links">
+                                <a href="#">f</a>
+                                <a href="#">@</a>
+                                <a href="#">in</a>
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Access</h3>
+                            <a href="#">About</a>
+                            <a href="#">Academic Calendar</a>
+                            <a href="#">Downloads</a>
+                            <a href="#">Campus Map</a>
+                            <a href="#">Directory</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Departments</h3>
+                            <a href="#">Applied Science</a>
+                            <a href="#">Architecture</a>
+                            <a href="#">Civil Engineering</a>
+                            <a href="#">Electronics & Computer Engineering</a>
+                            <a href="#">Industrial Engineering</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Resources</h3>
+                            <a href="#">Examination Control Board</a>
+                            <a href="#">Annual Reports</a>
+                            <a href="#">Act & Rules</a>
+                            <a href="#">Code of Conducts</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 IOE Thapathali Campus - All rights reserved | Accessibility | Terms of use | Sitemap</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Variant 4: Purple & Violet -->
+        <div class="footer-showcase">
+            <div class="footer-title">Variant 4: Purple & Violet</div>
+            <footer class="footer-base footer-variant-4">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="logo">IOE</div>
+                            <h3>Institution</h3>
+                            <p>Tribhuvan University<br>Institute of Engineering<br>Thapathali Campus</p>
+                            <div class="social-links">
+                                <a href="#">f</a>
+                                <a href="#">@</a>
+                                <a href="#">in</a>
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Access</h3>
+                            <a href="#">About</a>
+                            <a href="#">Academic Calendar</a>
+                            <a href="#">Downloads</a>
+                            <a href="#">Campus Map</a>
+                            <a href="#">Directory</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Departments</h3>
+                            <a href="#">Applied Science</a>
+                            <a href="#">Architecture</a>
+                            <a href="#">Civil Engineering</a>
+                            <a href="#">Electronics & Computer Engineering</a>
+                            <a href="#">Industrial Engineering</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Resources</h3>
+                            <a href="#">Examination Control Board</a>
+                            <a href="#">Annual Reports</a>
+                            <a href="#">Act & Rules</a>
+                            <a href="#">Code of Conducts</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 IOE Thapathali Campus - All rights reserved | Accessibility | Terms of use | Sitemap</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Variant 5: Rose Gold & Coral -->
+        <div class="footer-showcase">
+            <div class="footer-title">Variant 5: Rose Gold & Coral</div>
+            <footer class="footer-base footer-variant-5">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="logo">IOE</div>
+                            <h3>Institution</h3>
+                            <p>Tribhuvan University<br>Institute of Engineering<br>Thapathali Campus</p>
+                            <div class="social-links">
+                                <a href="#">f</a>
+                                <a href="#">@</a>
+                                <a href="#">in</a>
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Access</h3>
+                            <a href="#">About</a>
+                            <a href="#">Academic Calendar</a>
+                            <a href="#">Downloads</a>
+                            <a href="#">Campus Map</a>
+                            <a href="#">Directory</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Departments</h3>
+                            <a href="#">Applied Science</a>
+                            <a href="#">Architecture</a>
+                            <a href="#">Civil Engineering</a>
+                            <a href="#">Electronics & Computer Engineering</a>
+                            <a href="#">Industrial Engineering</a>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Resources</h3>
+                            <a href="#">Examination Control Board</a>
+                            <a href="#">Annual Reports</a>
+                            <a href="#">Act & Rules</a>
+                            <a href="#">Code of Conducts</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 IOE Thapathali Campus - All rights reserved | Accessibility | Terms of use | Sitemap</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
